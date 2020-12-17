@@ -27,7 +27,7 @@ resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
   ami                    = "ami-57b13f29"
-  instance_type          = "t2.micro"
+  instance_type          = "t3.medium"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
@@ -38,7 +38,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "web-sg" {
-  name = "${random_pet.sg.id}-sg"
+  name   = "${random_pet.sg.id}-sg"
 
   ingress {
     from_port   = 8080
