@@ -26,7 +26,7 @@ provider "random" {}
 resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
-  ami                    = "ami-57b13f29"
+  ami                    = "ami-0a3a4169ad7cb0d77"
   instance_type          = "t3.medium"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
